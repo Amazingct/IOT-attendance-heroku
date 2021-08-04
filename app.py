@@ -53,7 +53,7 @@ def update_students_dict():
     for s in std:
         if s != "":
             students.append(s)
-    students_sheet.update_cell(row, col, get_time()
+    students_sheet.update_cell(row, col, get_time())
     students_sheet.insert_row(["Name", "Print ID"], index=1)
     print("Updated Students")
     print(all_students)
