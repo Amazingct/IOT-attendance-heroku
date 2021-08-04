@@ -3,7 +3,6 @@ app = Flask(__name__)
 import time
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
-import json
 from datetime import datetime
 
 scopes = [
@@ -53,8 +52,6 @@ def update_students_dict():
     for s in std:
         if s != "":
             students.append(s)
-    students_sheet.update_cell(row, col, get_time())
-    students_sheet.insert_row(["Name", "Print ID"], index=1)
     print("Updated Students")
     print(all_students)
     print(headings)
@@ -107,6 +104,7 @@ def clear_attendance():
 
 
 update_students_dict()
+students_sheet.insert_row(["Name", "Print ID"], index=1)
 app = Flask(__name__)
 
 
