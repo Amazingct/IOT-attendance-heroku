@@ -104,7 +104,7 @@ def clear_attendance():
 
 
 update_students_dict()
-students_sheet.insert_row(["Name", "Print ID"], index=1)
+
 app = Flask(__name__)
 
 
