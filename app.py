@@ -119,8 +119,8 @@ def add_s():
         name = request.args.get('name')
         id = request.args.get('id')
         add_student(name, id)
-    except:
-        pass
+    except Exception as e:
+        print(e)
     return make_response('done!')
 
 
@@ -129,8 +129,8 @@ def add_atd():
     try:
         id = request.args.get('id')
         add_attendance(id)
-    except:
-        pass
+    except Exception as e:
+        print(e)
     return "done"
 
 
@@ -138,8 +138,8 @@ def add_atd():
 def clr():
     try:
         clear_attendance()
-    except:
-        pass
+    except Exception as e:
+        print(e)
     return "done"
 
 @app.route("/")
