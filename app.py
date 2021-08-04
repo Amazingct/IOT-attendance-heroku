@@ -104,7 +104,6 @@ def clear_attendance():
 
 
 update_students_dict()
-
 app = Flask(__name__)
 
 
@@ -116,23 +115,31 @@ def get_n():
 
 @app.route("/add_student", methods=['GET'])
 def add_s():
-    name = request.args.get('name')
-    id = request.args.get('id')
-    add_student(name, id)
-
+    try:
+        name = request.args.get('name')
+        id = request.args.get('id')
+        add_student(name, id)
+    except:
+        pass
     return make_response('done!')
 
 
 @app.route("/add_attendance", methods=['GET'])
 def add_atd():
-    id = request.args.get('id')
-    add_attendance(id)
+    try:
+        id = request.args.get('id')
+        add_attendance(id)
+    except:
+        pass
     return "done"
 
 
 @app.route("/clr", methods=['GET'])
 def clr():
-    clear_attendance()
+    try:
+        clear_attendance()
+    except:
+        pass
     return "done"
 
 @app.route("/")
