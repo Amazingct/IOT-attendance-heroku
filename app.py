@@ -149,7 +149,7 @@ def home():
   
 
 if __name__ == '__main__':
-    While True:
+    while True:
         try:
             app.run()
         except:
