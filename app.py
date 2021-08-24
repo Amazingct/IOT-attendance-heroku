@@ -146,9 +146,14 @@ def clr():
 def home():
     return "ESP ATTENDANCE SERVER"
 
+  
 
 if __name__ == '__main__':
-    app.run()
+    While True:
+        try:
+            app.run()
+        except:
+            print("resatart....")
 
 # #######################################################################################################
 
